@@ -2,6 +2,11 @@ import sys
 
 
 def main():
+    """
+        Count the number of uppercase, lowercase, punctuation, spaces,
+        and digits in a given text."
+    """
+
     try:
         assert len(sys.argv) <= 2, "more than one argument provided"
 
