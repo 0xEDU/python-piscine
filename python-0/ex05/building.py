@@ -12,14 +12,15 @@ def main():
 
         inputTxt = ''
         if len(sys.argv) == 1:
-            inputTxt = input('What is the text to count?\n')
+            print('What is the text to count?')
+            inputTxt = sys.stdin.readline()
         else:
             inputTxt = sys.argv[1]
         special = r'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
         uppers = sum(1 for c in inputTxt if c.isupper())
         lowers = sum(1 for c in inputTxt if c.islower())
         puncts = sum(1 for c in inputTxt if c in special)
-        spaces = sum(1 for c in inputTxt if c.isspace())
+        spaces = sum(1 for c in inputTxt if (c.isspace() or c == '\n'))
         digits = sum(1 for c in inputTxt if c.isdigit())
         print(f'{uppers} uppercase letters\n' +
               f'{lowers} lowercase letters\n' +
